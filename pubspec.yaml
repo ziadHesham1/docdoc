@@ -17,12 +17,7 @@ dev_dependencies:
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
-flutter_native_splash:
-    color: "#FFFFFF"
-    image: assets/images/docdoc_logo_and_name_android12.png
-    android12:
-      image: assets/images/docdoc_logo_and_name_android12.png
-      color: "#FFFFFF"
+
 flutter:
   
   uses-material-design: true

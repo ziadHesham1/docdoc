@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/helpers/app_extensions.dart';
 import '../../core/routing/routes.dart';
-import '../../core/theming/text_styles.dart';
+import '../../core/theming/app_text_styles.dart';
 import '../../core/widgets/app_elevated_button.dart';
 import 'widgets/doc_logo_and_name.dart';
 import 'widgets/doctor_image_and_text.dart';
@@ -30,7 +30,7 @@ class OnboardingScreen extends StatelessWidget {
                       Text(
                         'Manage and schedule all of your medical appointments'
                         ' easily with Docdoc to get a new experience.',
-                        style: TextStyles.font13ColorGrey,
+                        style: AppTextStyles.font13Grey,
                         textAlign: TextAlign.center,
                       ),
                       SizedBox(height: 30.h),

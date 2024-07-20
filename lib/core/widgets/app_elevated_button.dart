@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../theming/colors.dart';
+import '../theming/app_colors.dart';
 
 class AppElevatedButton extends StatelessWidget {
   final Function()? onPressed;

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../core/helpers/app_assets.dart';
-import '../../../core/theming/text_styles.dart';
+import '../../../core/theming/app_text_styles.dart';
 
 class DocLogoAndName extends StatelessWidget {
   const DocLogoAndName({super.key});
@@ -17,7 +17,7 @@ class DocLogoAndName extends StatelessWidget {
         SizedBox(width: 10.w),
         Text(
           'Docdoc',
-          style: TextStyles.font24Black700Weight,
+          style: AppTextStyles.font24BlackW700,
         ),
       ],
     );
