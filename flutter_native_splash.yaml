@@ -1,0 +1,11 @@
+flutter_native_splash:
+
+  # This is the image that will be displayed as the splash screen background.
+  image: assets/images/splash.png
+  color: "#ffffff"
+
+  android_12:
+    image: assets/images/docdoc_logo_and_name_android12.png
+
+
+
