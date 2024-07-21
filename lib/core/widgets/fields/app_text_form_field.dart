@@ -7,6 +7,7 @@ import '../../theming/app_text_styles.dart';
 class AppTextFormField extends StatelessWidget {
   final String hintText;
   final bool obscureText;
+  final Function(String?)? onSaved;
   final EdgeInsetsGeometry? contentPadding;
   final BorderRadius? borderRadius;
   final BorderSide? enabledBorderSide;
@@ -26,6 +27,7 @@ class AppTextFormField extends StatelessWidget {
     this.textStyle,
     this.suffixIcon,
     this.obscureText = false,
+    this.onSaved,
   });
 
   @override
@@ -49,6 +51,7 @@ class AppTextFormField extends StatelessWidget {
         hintStyle: hintStyle ?? AppTextStyles.font14Grey50,
         suffixIcon: suffixIcon,
       ),
+      onSaved: onSaved,
       obscureText: obscureText,
       style: textStyle ?? AppTextStyles.font14DarkBlueW500,
     );
