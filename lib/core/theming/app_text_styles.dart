@@ -32,7 +32,10 @@ class AppTextStyles {
     fontSize: 13.sp,
     color: AppColors.grey,
   );
-
+  static final TextStyle font13DarkBlue = TextStyle(
+    fontSize: 13.sp,
+    color: AppColors.darkBlue,
+  );
   static final TextStyle font14DarkBlueW500 = TextStyle(
     fontSize: 14.sp,
     color: AppColors.darkBlue,
