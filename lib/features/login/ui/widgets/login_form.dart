@@ -1,0 +1,93 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../core/helpers/app_regex.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_text_styles.dart';
+import '../../../../core/widgets/app_elevated_button.dart';
+import '../../../../core/widgets/fields/app_text_form_field.dart';
+import '../../data/models/login_request_body.dart';
+import '../../logic/login_cubit.dart';
+import 'password_text_form_field.dart';
+
+class LoginForm extends StatelessWidget {
+  final Function(LoginRequestBody loginRequestBody) onLogin;
+  const LoginForm({
+    super.key,
+    required this.onLogin,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: context.read<LoginCubit>().formKey,
+      child: Column(
+        children: [
+          SizedBox(height: 30.h),
+
+          /// email field
+          AppTextFormField(
+            hintText: 'Email',
+            controller: context.read<LoginCubit>().emailController,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter email';
+              }
+              if (!AppRegex.isEmailValid(value)) {
+                return 'Please enter valid email';
+              }
+              return null;
+            },
+          ),
+          SizedBox(height: 16.h),
+
+          /// password field
+          const PasswordTextFormField(),
+
+          /// remember me & forgot password row
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //   children: [
+          //     AppCheckBox(
+          //       label: 'Remember me',
+          //       onChanged: (value) {},
+          //     ),
+          Align(
+            alignment: AlignmentDirectional.centerEnd,
+            child: TextButton(
+              onPressed: () {},
+              style: TextButton.styleFrom(
+                foregroundColor: AppColors.primary,
+              ),
+              child: Text(
+                'Forgot Password?',
+                style: AppTextStyles.font12Primary,
+              ),
+            ),
+          ),
+          //   ],
+          // ),
+          SizedBox(height: 20.h),
+
+          /// login button
+          AppElevatedButton(
+            onPressed: () {
+              if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+                context.read<LoginCubit>().formKey.currentState!.save();
+                onLogin(
+                  LoginRequestBody(
+                    email: context.read<LoginCubit>().emailController.text,
+                    password:
+                        context.read<LoginCubit>().passwordController.text,
+                  ),
+                );
+              }
+            },
+            label: 'Login',
+          )
+        ],
+      ),
+    );
+  }
+}

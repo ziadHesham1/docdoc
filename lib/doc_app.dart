@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/routing/app_router.dart';
 import 'core/theming/app_colors.dart';
-import 'features/login/login_screen.dart';
+import 'features/onboarding/onboarding_screen.dart';
 
 class DocApp extends StatelessWidget {
   final AppRouter appRouter;
@@ -23,8 +23,8 @@ class DocApp extends StatelessWidget {
         ),
         debugShowCheckedModeBanner: false,
         onGenerateRoute: appRouter.generateRoute,
-        home: const LoginScreen(),
-        // home: const OnboardingScreen(),
+        // home: const LoginScreen(),
+        home: const OnboardingScreen(),
       ),
     );
   }
