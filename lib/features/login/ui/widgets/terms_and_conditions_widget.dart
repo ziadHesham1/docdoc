@@ -9,31 +9,28 @@ class TermsAndConditionsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: TextButton(
-        onPressed: () {},
-        child: RichText(
-          textAlign: TextAlign.center,
-          text: TextSpan(
-            style: const TextStyle(height: 1.5),
-            children: [
-              TextSpan(
-                text: 'By logging, you agree to our ',
-                style: AppTextStyles.font12lighterGrey,
-              ),
-              TextSpan(
-                text: 'Terms & Conditions',
-                style: AppTextStyles.font12darkBlueW600,
-              ),
-              TextSpan(
-                text: ' and',
-                style: AppTextStyles.font12lighterGrey,
-              ),
-              TextSpan(
-                text: ' Privacy Policy',
-                style: AppTextStyles.font12darkBlueW600,
-              ),
-            ],
-          ),
+      child: RichText(
+        textAlign: TextAlign.center,
+        text: TextSpan(
+          style: const TextStyle(height: 1.5),
+          children: [
+            TextSpan(
+              text: 'By logging, you agree to our ',
+              style: AppTextStyles.font12lighterGrey,
+            ),
+            TextSpan(
+              text: 'Terms & Conditions',
+              style: AppTextStyles.font12darkBlueW600,
+            ),
+            TextSpan(
+              text: ' and',
+              style: AppTextStyles.font12lighterGrey,
+            ),
+            TextSpan(
+              text: ' Privacy Policy',
+              style: AppTextStyles.font12darkBlueW600,
+            ),
+          ],
         ),
       ),
     );

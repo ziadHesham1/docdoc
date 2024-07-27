@@ -7,15 +7,12 @@ import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_text_styles.dart';
 import '../../../../core/widgets/app_elevated_button.dart';
 import '../../../../core/widgets/fields/app_text_form_field.dart';
-import '../../data/models/login_request_body.dart';
 import '../../logic/login_cubit.dart';
 import 'password_text_form_field.dart';
 
 class LoginForm extends StatelessWidget {
-  final Function(LoginRequestBody loginRequestBody) onLogin;
   const LoginForm({
     super.key,
-    required this.onLogin,
   });
 
   @override
@@ -75,13 +72,7 @@ class LoginForm extends StatelessWidget {
             onPressed: () {
               if (context.read<LoginCubit>().formKey.currentState!.validate()) {
                 context.read<LoginCubit>().formKey.currentState!.save();
-                onLogin(
-                  LoginRequestBody(
-                    email: context.read<LoginCubit>().emailController.text,
-                    password:
-                        context.read<LoginCubit>().passwordController.text,
-                  ),
-                );
+                context.read<LoginCubit>().login();
               }
             },
             label: 'Login',
