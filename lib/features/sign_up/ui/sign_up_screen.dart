@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/theming/app_text_styles.dart';
-import 'widgets/login_bloc_listener.dart';
-import 'widgets/login_form.dart';
-import 'widgets/signup_text_button.dart';
-import 'widgets/terms_and_conditions_widget.dart';
+import '../../login/ui/widgets/terms_and_conditions_widget.dart';
+import 'widgets /sign_up_form.dart';
+import 'widgets /login_text_button.dart';
+import 'widgets%20/sign_up_bloc_listener.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return LoginBlocListener(
+    return SignupBlocListener(
       child: Scaffold(
         body: SafeArea(
           child: SingleChildScrollView(
@@ -24,20 +24,20 @@ class LoginScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Welcome Back',
+                    'Create Account',
                     style: AppTextStyles.font24BlueW700,
                   ),
                   SizedBox(height: 10.h),
                   Text(
-                    "We're excited to have you back, "
-                    "can't wait to see what you've been up to since you last logged in.",
+                    "Sign up now and start exploring all that our app has to offer."
+                    " We're excited to welcome you to our community!",
                     style: AppTextStyles.font13Grey,
                   ),
-                  const LoginForm(),
+                  const SignupForm(),
                   SizedBox(height: 20.h),
                   const TermsAndConditionsWidget(),
                   SizedBox(height: 20.h),
-                  const SignupTextButton(),
+                  const LoginTextButton(),
                 ],
               ),
             ),

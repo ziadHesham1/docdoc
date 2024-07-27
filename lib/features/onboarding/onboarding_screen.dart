@@ -36,7 +36,7 @@ class OnboardingScreen extends StatelessWidget {
                       SizedBox(height: 30.h),
                       AppElevatedButton(
                         onPressed: () {
-                          context.pushNamed(Routes.loginScreen);
+                          context.pushReplacementNamed(Routes.loginScreen);
                         },
                         label: 'Get Started',
                       )

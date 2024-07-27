@@ -1,11 +1,11 @@
-import 'package:docdoc/core/helpers/app_extensions.dart';
-import 'package:docdoc/core/theming/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/helpers/app_extensions.dart';
 import '../../../../core/routing/routes.dart';
+import '../../../../core/theming/app_text_styles.dart';
 
-class SignupTextButton extends StatelessWidget {
-  const SignupTextButton({
+class LoginTextButton extends StatelessWidget {
+  const LoginTextButton({
     super.key,
   });
 
@@ -14,17 +14,17 @@ class SignupTextButton extends StatelessWidget {
     return Center(
       child: TextButton(
         onPressed: () {
-          context.pushReplacementNamed(Routes.signupScreen);
+          context.pushReplacementNamed(Routes.loginScreen);
         },
         child: RichText(
           text: TextSpan(
             children: [
               TextSpan(
-                text: 'Don\'t have an account? ',
+                text: 'Already have an account? ',
                 style: AppTextStyles.font12DarkBlue,
               ),
               TextSpan(
-                text: 'Sign Up',
+                text: 'Login',
                 style: AppTextStyles.font12PrimaryW600,
               ),
             ],

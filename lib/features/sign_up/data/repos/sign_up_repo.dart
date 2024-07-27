@@ -1,18 +1,16 @@
 import '../../../../core/networking/api_error_handler/api_error_handler.dart';
 import '../../../../core/networking/api_result.dart';
 import '../../../../core/networking/api_service.dart';
-import '../models/login_request_body.dart';
-import '../models/login_response.dart';
+import '../../../login/data/models/login_response.dart';
+import '../models/sign_up_request_body.dart';
 
-class LoginRepo {
+class SignupRepo {
+  SignupRepo(this._apiService);
   final ApiService _apiService;
-
-  LoginRepo(this._apiService);
-
-  Future<ApiResult<LoginResponse>> login(
-      LoginRequestBody loginRequestBody) async {
+  Future<ApiResult<LoginResponse>> signup(
+      SignUpRequestBody signUpRequestBody) async {
     try {
-      final response = await _apiService.login(loginRequestBody);
+      var response = await _apiService.signup(signUpRequestBody);
       return ApiResult<LoginResponse>.success(response);
     } catch (e) {
       return ApiResult<LoginResponse>.failure(ErrorHandler.handle(e));
