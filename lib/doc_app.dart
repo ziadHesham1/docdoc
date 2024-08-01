@@ -1,3 +1,4 @@
+import 'package:docdoc/features/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -24,7 +25,7 @@ class DocApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         onGenerateRoute: appRouter.generateRoute,
         // home: const LoginScreen(),
-        home: const OnboardingScreen(),
+        home: const HomeScreen(),
       ),
     );
   }
