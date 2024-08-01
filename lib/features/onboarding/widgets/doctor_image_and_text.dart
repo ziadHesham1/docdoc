@@ -34,7 +34,7 @@ class DoctorImageAndText extends StatelessWidget {
               begin: Alignment.bottomCenter,
             )),
             child: Image.asset(
-              'assets/images/onboarding_doctor.png',
+              AppAssets.onboarding_doctor,
             )),
         Positioned(
           bottom: 30,

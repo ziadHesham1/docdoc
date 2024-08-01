@@ -3,17 +3,25 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../theming/app_colors.dart';
 
+/// add text color property
 class AppElevatedButton extends StatelessWidget {
   final Function()? onPressed;
+  final Color? backgroundColor;
+  final TextStyle? textStyle;
   final String label;
   final double? width;
   final double? height;
+  final double? borderRadius;
+
   const AppElevatedButton({
     super.key,
     required this.onPressed,
     required this.label,
     this.width,
     this.height,
+    this.backgroundColor,
+    this.textStyle,
+    this.borderRadius,
   });
 
   @override
@@ -29,14 +37,14 @@ class AppElevatedButton extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
-        backgroundColor: AppColors.primary,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(borderRadius ?? 16.r)),
+        backgroundColor: backgroundColor ?? AppColors.primary,
         minimumSize: getButtonSize(),
       ),
       child: Text(
         label,
-        style: font16WhiteW700,
+        style: textStyle ?? font16WhiteW700,
       ),
     );
   }

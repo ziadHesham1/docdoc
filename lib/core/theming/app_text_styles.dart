@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'app_colors.dart';
 
 class AppTextStyles {
+  /// 12
   static final TextStyle font12DarkBlue = TextStyle(
     fontSize: 12.sp,
     color: AppColors.darkBlue,
@@ -28,14 +29,21 @@ class AppTextStyles {
     color: AppColors.primary,
   );
 
+  /// 13
   static final TextStyle font13Grey = TextStyle(
     fontSize: 13.sp,
     color: AppColors.grey,
+  );
+  static final TextStyle font13Grey80 = TextStyle(
+    fontSize: 13.sp,
+    color: AppColors.grey80,
   );
   static final TextStyle font13DarkBlue = TextStyle(
     fontSize: 13.sp,
     color: AppColors.darkBlue,
   );
+
+  /// 14
   static final TextStyle font14DarkBlueW500 = TextStyle(
     fontSize: 14.sp,
     color: AppColors.darkBlue,
@@ -46,12 +54,15 @@ class AppTextStyles {
     color: AppColors.grey50,
     fontSize: 14.sp,
   );
+
+  /// 15
   static TextStyle font15DarkBlueW500 = TextStyle(
     fontSize: 15.sp,
     fontWeight: FontWeight.w500,
     color: AppColors.darkBlue,
   );
 
+  /// 24
   static final TextStyle font24BlackW700 = TextStyle(
     fontSize: 24.sp,
     fontWeight: FontWeight.w700,
@@ -63,6 +74,7 @@ class AppTextStyles {
     fontWeight: FontWeight.w700,
   );
 
+  /// 32
   static final TextStyle font32BlueW700 = TextStyle(
     fontSize: 32.sp,
     color: AppColors.primary,
