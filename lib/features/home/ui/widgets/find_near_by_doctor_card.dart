@@ -2,8 +2,8 @@ import 'package:docdoc/core/helpers/app_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/theming/app_colors.dart';
-import '../../../core/widgets/app_elevated_button.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/widgets/app_elevated_button.dart';
 
 class FindNearByDoctorCard extends StatelessWidget {
   const FindNearByDoctorCard({super.key});
