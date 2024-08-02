@@ -5,11 +5,6 @@ import 'package:dio/dio.dart';
 import '../../networking/api_error_handler/data_source.dart';
 import 'api_error_model.dart';
 
-class ApiInternalStatus {
-  static const int SUCCESS = 0;
-  static const int FAILURE = 1;
-}
-
 class ErrorHandler implements Exception {
   late ApiErrorModel apiErrorModel;
 
@@ -19,6 +14,7 @@ class ErrorHandler implements Exception {
       apiErrorModel = _handleError(error);
     } else {
       // default error
+      print('ErrorHandler > default error: $error');
       apiErrorModel = DataSource.DEFAULT.getFailure();
     }
   }
@@ -62,7 +58,5 @@ ApiErrorModel _handleError(DioException error) {
       {
         return DataSource.DEFAULT.getFailure();
       }
-    // case DioExceptionType.badResponse:
-    //   return DataSource.DEFAULT.getFailure();
   }
 }

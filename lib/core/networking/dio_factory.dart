@@ -7,11 +7,18 @@ class DioFactory {
   DioFactory._();
   static Dio? dio;
   static Dio getDio() {
-    Duration timeout = const Duration(seconds: 30);
+    const Duration timeout = Duration(seconds: 30);
+    const tempToken =
+        "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3ZjYXJlLmludGVncmF0aW9uMjUuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzIyNTgxMjg5LCJleHAiOjE3MjI2Njc2ODksIm5iZiI6MTcyMjU4MTI4OSwianRpIjoid2E3T2kzQ0VFbllSUTBEeiIsInN1YiI6IjE2MjciLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.vaC0Iu_EfnNyBHYI7_vJqLNfy9zNTyyeHp7V2AC7H1A";
+    const Map<String, String> headers = {
+      'Accept': 'application/json',
+      'Authorization': tempToken
+    };
     if (dio == null) {
       var options = BaseOptions(
         connectTimeout: timeout,
         receiveTimeout: timeout,
+        headers: headers,
       );
       dio = Dio(options);
       addInterceptors();

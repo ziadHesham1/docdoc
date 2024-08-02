@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../data/models/specialization_model.dart';
 
 class SpecialtyItem extends StatelessWidget {
-  final String label;
+  final Specialization specialization;
   const SpecialtyItem({
     super.key,
-    required this.label,
+    required this.specialization,
   });
 
   @override
@@ -31,7 +32,7 @@ class SpecialtyItem extends StatelessWidget {
         ),
         SizedBox(height: 12.h),
         Text(
-          label,
+          specialization.name,
           // font 12
           style: TextStyle(fontSize: 12.sp),
         )

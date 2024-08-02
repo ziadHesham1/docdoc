@@ -1,23 +1,17 @@
+import 'package:docdoc/core/helpers/app_assets.dart';
+import 'package:docdoc/features/home/data/models/specialization_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/helpers/app_assets.dart';
-
-class RecommendedDoctorSection extends StatelessWidget {
-  const RecommendedDoctorSection({super.key});
+class DoctorItemWidget extends StatelessWidget {
+  final Doctor doctor;
+  const DoctorItemWidget({
+    super.key,
+    required this.doctor,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 500.h,
-      child: ListView.builder(
-        itemBuilder: (context, index) => newMethod(),
-        itemCount: 6,
-      ),
-    );
-  }
-
-  Widget newMethod() {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
@@ -36,7 +30,7 @@ class RecommendedDoctorSection extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                  'Dr. Rary Wighatsvrtbrtbm',
+                  doctor.name,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontSize: 18.sp,
@@ -45,14 +39,14 @@ class RecommendedDoctorSection extends StatelessWidget {
                 ),
                 SizedBox(height: 5.h),
                 Text(
-                  'General | RSUD Gatot Subroto',
+                  '${doctor.degree} | ${doctor.phone}',
                   style: TextStyle(
                     fontSize: 12.sp,
                   ),
                 ),
                 SizedBox(height: 5.h),
                 Text(
-                  '4.8 (4,279 reviews)',
+                  doctor.email,
                   style: TextStyle(
                     fontSize: 12.sp,
                   ),
