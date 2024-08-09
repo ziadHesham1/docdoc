@@ -23,3 +23,8 @@ extension Navigation on BuildContext {
     Navigator.of(this).pop();
   }
 }
+
+// string null or empty
+extension StringExtension on String? {
+  bool get isNullOrEmpty => this == null || this!.isEmpty;
+}

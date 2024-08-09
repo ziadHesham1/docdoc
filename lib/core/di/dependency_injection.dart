@@ -14,7 +14,7 @@ import '../networking/dio_factory.dart';
 final getIt = GetIt.instance;
 setupGetIt() async {
 // dio & api service
-  Dio dio = DioFactory.getDio();
+  Dio dio = await DioFactory.getDio();
 
   getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
 
