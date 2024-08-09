@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../core/helpers/shared_pref/shared_pref_helper.dart';
+import '../../../core/helpers/shared_pref/shared_pref_keys.dart';
 import '../../../core/networking/api_error_handler/api_error_handler.dart';
 import '../../../core/networking/api_result.dart';
+import '../../../core/networking/dio_factory.dart';
 import '../data/models/login_request_body.dart';
 import '../data/models/login_response.dart';
 import '../data/repos/login_repo.dart';
@@ -23,7 +26,12 @@ class LoginCubit extends Cubit<LoginState> {
         LoginRequestBody(
             email: emailController.text, password: passwordController.text));
     response.when(
-      success: (LoginResponse data) => emit(LoginState.success(data)),
+      success: (LoginResponse data) {
+        SharedPrefHelper.setSecuredString(
+            SharedPrefKeys.accessToken, data.loginResponse.token);
+        DioFactory.updateDioHeadersToken(data.loginResponse.token);
+        emit(LoginState.success(data));
+      },
       failure: (ErrorHandler error) => emit(
         LoginState.error(error: error.apiErrorModel.message),
       ),

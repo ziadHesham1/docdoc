@@ -44,8 +44,7 @@ mixin _$HomeState<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(SpecializationsLoading<T> value)
-        specializationsLoading,
+    required TResult Function(Loading<T> value) specializationsLoading,
     required TResult Function(SpecializationsSuccess<T> value)
         specializationsSuccess,
     required TResult Function(SpecializationsError<T> value)
@@ -55,7 +54,7 @@ mixin _$HomeState<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(SpecializationsLoading<T> value)? specializationsLoading,
+    TResult? Function(Loading<T> value)? specializationsLoading,
     TResult? Function(SpecializationsSuccess<T> value)? specializationsSuccess,
     TResult? Function(SpecializationsError<T> value)? specializationsError,
   }) =>
@@ -63,7 +62,7 @@ mixin _$HomeState<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(SpecializationsLoading<T> value)? specializationsLoading,
+    TResult Function(Loading<T> value)? specializationsLoading,
     TResult Function(SpecializationsSuccess<T> value)? specializationsSuccess,
     TResult Function(SpecializationsError<T> value)? specializationsError,
     required TResult orElse(),
@@ -165,8 +164,7 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(SpecializationsLoading<T> value)
-        specializationsLoading,
+    required TResult Function(Loading<T> value) specializationsLoading,
     required TResult Function(SpecializationsSuccess<T> value)
         specializationsSuccess,
     required TResult Function(SpecializationsError<T> value)
@@ -179,7 +177,7 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(SpecializationsLoading<T> value)? specializationsLoading,
+    TResult? Function(Loading<T> value)? specializationsLoading,
     TResult? Function(SpecializationsSuccess<T> value)? specializationsSuccess,
     TResult? Function(SpecializationsError<T> value)? specializationsError,
   }) {
@@ -190,7 +188,7 @@ class _$InitialImpl<T> implements _Initial<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(SpecializationsLoading<T> value)? specializationsLoading,
+    TResult Function(Loading<T> value)? specializationsLoading,
     TResult Function(SpecializationsSuccess<T> value)? specializationsSuccess,
     TResult Function(SpecializationsError<T> value)? specializationsError,
     required TResult orElse(),
@@ -226,7 +224,7 @@ class __$$SpecializationsLoadingImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$SpecializationsLoadingImpl<T> implements SpecializationsLoading<T> {
+class _$SpecializationsLoadingImpl<T> implements Loading<T> {
   const _$SpecializationsLoadingImpl();
 
   @override
@@ -285,8 +283,7 @@ class _$SpecializationsLoadingImpl<T> implements SpecializationsLoading<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(SpecializationsLoading<T> value)
-        specializationsLoading,
+    required TResult Function(Loading<T> value) specializationsLoading,
     required TResult Function(SpecializationsSuccess<T> value)
         specializationsSuccess,
     required TResult Function(SpecializationsError<T> value)
@@ -299,7 +296,7 @@ class _$SpecializationsLoadingImpl<T> implements SpecializationsLoading<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(SpecializationsLoading<T> value)? specializationsLoading,
+    TResult? Function(Loading<T> value)? specializationsLoading,
     TResult? Function(SpecializationsSuccess<T> value)? specializationsSuccess,
     TResult? Function(SpecializationsError<T> value)? specializationsError,
   }) {
@@ -310,7 +307,7 @@ class _$SpecializationsLoadingImpl<T> implements SpecializationsLoading<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(SpecializationsLoading<T> value)? specializationsLoading,
+    TResult Function(Loading<T> value)? specializationsLoading,
     TResult Function(SpecializationsSuccess<T> value)? specializationsSuccess,
     TResult Function(SpecializationsError<T> value)? specializationsError,
     required TResult orElse(),
@@ -322,8 +319,8 @@ class _$SpecializationsLoadingImpl<T> implements SpecializationsLoading<T> {
   }
 }
 
-abstract class SpecializationsLoading<T> implements HomeState<T> {
-  const factory SpecializationsLoading() = _$SpecializationsLoadingImpl<T>;
+abstract class Loading<T> implements HomeState<T> {
+  const factory Loading() = _$SpecializationsLoadingImpl<T>;
 }
 
 /// @nodoc
@@ -431,8 +428,7 @@ class _$SpecializationsSuccessImpl<T> implements SpecializationsSuccess<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(SpecializationsLoading<T> value)
-        specializationsLoading,
+    required TResult Function(Loading<T> value) specializationsLoading,
     required TResult Function(SpecializationsSuccess<T> value)
         specializationsSuccess,
     required TResult Function(SpecializationsError<T> value)
@@ -445,7 +441,7 @@ class _$SpecializationsSuccessImpl<T> implements SpecializationsSuccess<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(SpecializationsLoading<T> value)? specializationsLoading,
+    TResult? Function(Loading<T> value)? specializationsLoading,
     TResult? Function(SpecializationsSuccess<T> value)? specializationsSuccess,
     TResult? Function(SpecializationsError<T> value)? specializationsError,
   }) {
@@ -456,7 +452,7 @@ class _$SpecializationsSuccessImpl<T> implements SpecializationsSuccess<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(SpecializationsLoading<T> value)? specializationsLoading,
+    TResult Function(Loading<T> value)? specializationsLoading,
     TResult Function(SpecializationsSuccess<T> value)? specializationsSuccess,
     TResult Function(SpecializationsError<T> value)? specializationsError,
     required TResult orElse(),
@@ -582,8 +578,7 @@ class _$SpecializationsErrorImpl<T> implements SpecializationsError<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
-    required TResult Function(SpecializationsLoading<T> value)
-        specializationsLoading,
+    required TResult Function(Loading<T> value) specializationsLoading,
     required TResult Function(SpecializationsSuccess<T> value)
         specializationsSuccess,
     required TResult Function(SpecializationsError<T> value)
@@ -596,7 +591,7 @@ class _$SpecializationsErrorImpl<T> implements SpecializationsError<T> {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(SpecializationsLoading<T> value)? specializationsLoading,
+    TResult? Function(Loading<T> value)? specializationsLoading,
     TResult? Function(SpecializationsSuccess<T> value)? specializationsSuccess,
     TResult? Function(SpecializationsError<T> value)? specializationsError,
   }) {
@@ -607,7 +602,7 @@ class _$SpecializationsErrorImpl<T> implements SpecializationsError<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
-    TResult Function(SpecializationsLoading<T> value)? specializationsLoading,
+    TResult Function(Loading<T> value)? specializationsLoading,
     TResult Function(SpecializationsSuccess<T> value)? specializationsSuccess,
     TResult Function(SpecializationsError<T> value)? specializationsError,
     required TResult orElse(),

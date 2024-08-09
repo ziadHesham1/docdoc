@@ -11,11 +11,14 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit(this.homeRepo) : super(const HomeState.initial());
 
   Future<void> getSpecializations() async {
-    emit(const HomeState.specializationsLoading());
+    emit(const HomeState.loading());
     ApiResult<Specializations> result = await homeRepo.getSpecializations();
     result.when(
-      success: (Specializations data) =>
-          emit(HomeState.specializationsSuccess(data)),
+      success: (Specializations data) => emit(
+        HomeState.specializationsSuccess(
+          data.specializations,
+        ),
+      ),
       failure: (ErrorHandler error) => emit(
           HomeState.specializationsError(error: error.apiErrorModel.message)),
     );
