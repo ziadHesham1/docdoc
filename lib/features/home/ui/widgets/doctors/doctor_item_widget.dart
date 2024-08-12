@@ -1,7 +1,8 @@
-import 'package:docdoc/core/helpers/app_assets.dart';
-import 'package:docdoc/features/home/data/models/specialization_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../../core/widgets/app_image_widget.dart';
+import '../../../data/models/specialization_model.dart';
 
 class DoctorItemWidget extends StatelessWidget {
   final Doctor doctor;
@@ -18,10 +19,8 @@ class DoctorItemWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(
-            AppAssets.doctor_image,
-            width: 110.w,
-            height: 110.h,
+          AppImageWidget(
+            imageUrl: doctor.photo,
           ),
           SizedBox(width: 20.h),
           Expanded(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/helpers/shared_pref/shared_pref_helper.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_text_styles.dart';
 
@@ -53,6 +54,20 @@ class HomeAppBar extends StatelessWidget {
                 color: Colors.black,
               ),
             ],
+          ),
+        ),
+        IconButton(
+          onPressed: () {
+            SharedPrefHelper.clearAllSecuredData();
+          },
+          // background grey
+          style: IconButton.styleFrom(
+            backgroundColor: AppColors.grey20,
+            shape: const CircleBorder(),
+          ),
+          icon: const Icon(
+            Icons.logout_outlined,
+            color: Colors.black,
           ),
         ),
       ],
