@@ -75,14 +75,14 @@ Map<String, dynamic> _$DoctorToJson(Doctor instance) => <String, dynamic>{
 City _$CityFromJson(Map<String, dynamic> json) => City(
       id: (json['id'] as num).toInt(),
       name: json['name'] as String,
-      governrate:
+      governorate:
           Governorate.fromJson(json['governrate'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$CityToJson(City instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'governrate': instance.governrate,
+      'governrate': instance.governorate,
     };
 
 Governorate _$GovernorateFromJson(Map<String, dynamic> json) => Governorate(

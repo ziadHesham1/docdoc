@@ -69,11 +69,11 @@ class Doctor {
 class City {
   final int id;
   final String name;
-  final Governorate governrate;
+  final Governorate governorate;
   City({
     required this.id,
     required this.name,
-    required this.governrate,
+    required this.governorate,
   });
 
   factory City.fromJson(Map<String, dynamic> json) => _$CityFromJson(json);

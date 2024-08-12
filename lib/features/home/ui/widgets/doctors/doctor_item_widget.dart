@@ -1,8 +1,7 @@
-import 'package:docdoc/core/widgets/app_image_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/helpers/app_assets.dart';
+import '../../../../../core/widgets/app_image_widget.dart';
 import '../../../data/models/specialization_model.dart';
 
 class DoctorItemWidget extends StatelessWidget {
