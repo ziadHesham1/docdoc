@@ -16,10 +16,8 @@ abstract class HomeState<T> with _$HomeState<T> {
 
   const factory HomeState.specializationsError({required String error}) =
       SpecializationsError;
-// doctor
-//success
+
   const factory HomeState.doctorsSuccess(List<Doctor> doctors) = DoctorsSuccess;
 
-//error
   const factory HomeState.doctorsError({required String error}) = DoctorsError;
 }
