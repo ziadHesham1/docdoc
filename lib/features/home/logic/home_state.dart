@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../core/networking/api_error_handler/api_error_model.dart';
 import '../data/models/specialization_model.dart';
 
 part 'home_state.freezed.dart';
@@ -14,10 +15,10 @@ abstract class HomeState<T> with _$HomeState<T> {
   const factory HomeState.specializationsSuccess(
       List<Specialization> specializations) = SpecializationsSuccess;
 
-  const factory HomeState.specializationsError({required String error}) =
+  const factory HomeState.specializationsError({required ApiErrorModel error}) =
       SpecializationsError;
 
   const factory HomeState.doctorsSuccess(List<Doctor> doctors) = DoctorsSuccess;
 
-  const factory HomeState.doctorsError({required String error}) = DoctorsError;
+  const factory HomeState.doctorsError() = DoctorsError;
 }

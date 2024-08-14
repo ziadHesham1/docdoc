@@ -1,7 +1,9 @@
-import 'package:docdoc/core/helpers/app_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/helpers/app_extensions.dart';
+import '../../../../core/networking/api_error_handler/api_error_model.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/app_text_styles.dart';
 import '../../logic/signup_cubit.dart';
@@ -37,18 +39,20 @@ class SignupBlocListener extends StatelessWidget {
     );
   }
 
-  void setupErrorState(BuildContext context, String error) {
+  void setupErrorState(BuildContext context, ApiErrorModel error) {
     context.pop();
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
+        contentPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
         icon: const Icon(
           Icons.error,
           color: Colors.red,
           size: 32,
         ),
         content: Text(
-          error,
+          error.toString(),
+          textAlign: TextAlign.center,
           style: AppTextStyles.font15DarkBlueW500,
         ),
         actions: [

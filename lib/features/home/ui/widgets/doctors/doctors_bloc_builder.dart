@@ -24,7 +24,7 @@ class DoctorsBlocBuilder extends StatelessWidget {
     );
   }
 
-  Widget setupError(String error) => Text(error);
+  Widget setupError() => const Text('No doctors found');
 
   Widget setupSuccess(List<Doctor> doctors) =>
       DoctorsListView(doctors: doctors);
