@@ -1,7 +1,8 @@
-import 'package:docdoc/core/helpers/app_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/helpers/app_extensions.dart';
+import '../../../../core/networking/api_error_handler/api_error_model.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/theming/app_text_styles.dart';
 import '../../logic/login_cubit.dart';
@@ -35,7 +36,7 @@ class LoginBlocListener extends StatelessWidget {
     );
   }
 
-  void setupErrorState(BuildContext context, String error) {
+  void setupErrorState(BuildContext context, ApiErrorModel error) {
     context.pop();
     showDialog(
       context: context,
@@ -46,7 +47,7 @@ class LoginBlocListener extends StatelessWidget {
           size: 32,
         ),
         content: Text(
-          error,
+          error.toString(),
           style: AppTextStyles.font15DarkBlueW500,
         ),
         actions: [

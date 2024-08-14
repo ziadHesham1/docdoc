@@ -64,14 +64,14 @@ class SignupForm extends StatelessWidget {
           /// signup button
           AppElevatedButton(
             onPressed: () {
-              if (context
-                  .read<SignupCubit>()
-                  .formKey
-                  .currentState!
-                  .validate()) {
-                context.read<SignupCubit>().formKey.currentState!.save();
-                context.read<SignupCubit>().signup();
-              }
+              // if (context
+              //     .read<SignupCubit>()
+              //     .formKey
+              //     .currentState!
+              //     .validate()) {
+              context.read<SignupCubit>().formKey.currentState!.save();
+              context.read<SignupCubit>().signup();
+              // }
             },
             label: 'Create Account',
           ),

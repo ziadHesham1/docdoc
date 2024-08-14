@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../core/networking/api_error_handler/api_error_model.dart';
 import '../../../data/models/specialization_model.dart';
 import '../../../logic/home_cubit.dart';
 import '../../../logic/home_state.dart';
@@ -31,7 +32,7 @@ class SpecializationsBlocBuilder extends StatelessWidget {
 // create sh
   Widget setupLoading() => const HomeShimmerLoading();
 
-  Widget setupError(String error) => Text(error);
+  Widget setupError(ApiErrorModel error) => Text(error.toString());
 
   Widget setupSuccess(List<Specialization> specializations) =>
       SpecializationsListView(specializationsList: specializations);

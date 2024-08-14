@@ -82,7 +82,7 @@ City _$CityFromJson(Map<String, dynamic> json) => City(
 Map<String, dynamic> _$CityToJson(City instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'governrate': instance.governorate,
+      'governorate': instance.governorate,
     };
 
 Governorate _$GovernorateFromJson(Map<String, dynamic> json) => Governorate(
