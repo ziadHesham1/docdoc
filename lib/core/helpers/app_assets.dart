@@ -27,6 +27,8 @@ class AppAssets {
       'assets/images/home_card_background.png';
 
   /// icons
+  static const String calender_icon = 'assets/icons/calender_icon.png';
+  static const String appointment_icon = 'assets/icons/appointment_icon.png';
 
   /// svgs
   static const String docdoc_logo_svg = 'assets/svgs/docdoc_logo.svg';

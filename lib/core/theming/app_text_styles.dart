@@ -1,3 +1,4 @@
+import 'font_weight_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -9,16 +10,16 @@ class AppTextStyles {
     fontSize: 12.sp,
     color: AppColors.darkBlue,
   );
-  static final TextStyle font12PrimaryW600 = TextStyle(
+  static final TextStyle font12PrimarySemiBold = TextStyle(
     fontSize: 12.sp,
     color: AppColors.primary,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeightHelper.semiBold,
   );
 
-  static final TextStyle font12darkBlueW600 = TextStyle(
+  static final TextStyle font12darkBlueSemiBold = TextStyle(
     fontSize: 12.sp,
     color: AppColors.darkBlue,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeightHelper.semiBold,
   );
   static final TextStyle font12lighterGrey = TextStyle(
     fontSize: 12.sp,
@@ -42,47 +43,61 @@ class AppTextStyles {
     fontSize: 13.sp,
     color: AppColors.darkBlue,
   );
-  static final TextStyle font13DarkBlueW500 = TextStyle(
+  static final TextStyle font13DarkBlueMedium = TextStyle(
     fontSize: 13.sp,
     color: AppColors.darkBlue,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeightHelper.medium,
   );
 
   /// 14
-  static final TextStyle font14DarkBlueW500 = TextStyle(
+  static final TextStyle font14DarkBlueMedium = TextStyle(
     fontSize: 14.sp,
     color: AppColors.darkBlue,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeightHelper.medium,
   );
 
   static final TextStyle font14Grey50 = TextStyle(
     color: AppColors.grey50,
     fontSize: 14.sp,
   );
+  static final TextStyle font14Grey = TextStyle(
+    color: AppColors.grey,
+    fontSize: 14.sp,
+  );
+  static final font14White = TextStyle(color: Colors.white, fontSize: 14.sp);
+  static final font14Primary =
+      TextStyle(color: AppColors.primary, fontSize: 14.sp);
 
   /// 15
-  static TextStyle font15DarkBlueW500 = TextStyle(
+  static TextStyle font15DarkBlueMedium = TextStyle(
     fontSize: 15.sp,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeightHelper.medium,
     color: AppColors.darkBlue,
   );
 
-  /// 24
-  static final TextStyle font24BlackW700 = TextStyle(
-    fontSize: 24.sp,
-    fontWeight: FontWeight.w700,
+  /// 16
+  static TextStyle font16DarkBlueSemiBold = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.semiBold,
+    // color: AppColors.darkBlue,
   );
 
-  static final TextStyle font24BlueW700 = TextStyle(
+  /// 24
+  static final TextStyle font24BlackBold = TextStyle(
+    fontSize: 24.sp,
+    fontWeight: FontWeightHelper.bold,
+  );
+
+  static final TextStyle font24BlueBold = TextStyle(
     fontSize: 24.sp,
     color: AppColors.primary,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeightHelper.bold,
   );
 
   /// 32
-  static final TextStyle font32BlueW700 = TextStyle(
+  static final TextStyle font32BlueBold = TextStyle(
     fontSize: 32.sp,
     color: AppColors.primary,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeightHelper.bold,
   );
 }

@@ -70,10 +70,10 @@ class LoginForm extends StatelessWidget {
           /// login button
           AppElevatedButton(
             onPressed: () {
-              // if (context.read<LoginCubit>().formKey.currentState!.validate()) {
-              context.read<LoginCubit>().formKey.currentState!.save();
-              context.read<LoginCubit>().login();
-              // }
+              if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+                context.read<LoginCubit>().formKey.currentState!.save();
+                context.read<LoginCubit>().login();
+              }
             },
             label: 'Login',
           )

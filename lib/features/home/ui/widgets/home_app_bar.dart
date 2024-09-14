@@ -18,7 +18,7 @@ class HomeAppBar extends StatelessWidget {
             SizedBox(height: 20.h),
             Text(
               'Hi, Omar!',
-              style: AppTextStyles.font24BlackW700,
+              style: AppTextStyles.font24BlackBold,
             ),
             // SizedBox(height: 10.h),
             Text(

@@ -28,7 +28,7 @@ class SignupBlocListener extends StatelessWidget {
           },
           success: (data) {
             context.pop();
-            context.pushReplacementNamed(Routes.homeScreen);
+            context.pushReplacementNamed(Routes.navbar);
           },
           error: (error) {
             setupErrorState(context, error);
@@ -53,7 +53,7 @@ class SignupBlocListener extends StatelessWidget {
         content: Text(
           error.toString(),
           textAlign: TextAlign.center,
-          style: AppTextStyles.font15DarkBlueW500,
+          style: AppTextStyles.font15DarkBlueMedium,
         ),
         actions: [
           TextButton(
@@ -62,7 +62,7 @@ class SignupBlocListener extends StatelessWidget {
             },
             child: Text(
               'Got it',
-              style: AppTextStyles.font14DarkBlueW500,
+              style: AppTextStyles.font14DarkBlueMedium,
             ),
           ),
         ],

@@ -28,8 +28,8 @@ class DocApp extends StatelessWidget {
         ),
         debugShowCheckedModeBanner: false,
         onGenerateRoute: appRouter.generateRoute,
-        initialRoute:
-            isLoggedInUser ? Routes.homeScreen : Routes.onBoardingScreen,
+        initialRoute: isLoggedInUser ? Routes.navbar : Routes.onBoardingScreen,
+        // initialRoute: Routes.newAppointmentScreen,
       ),
     );
   }

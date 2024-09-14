@@ -1,7 +1,10 @@
-import 'package:docdoc/core/theming/app_colors.dart';
+import 'core/di/dependency_injection.dart';
+import 'core/theming/app_colors.dart';
+import 'features/home/logic/home_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'features/doctor_details/doctor_details_screen.dart';
+import 'features/doctor_profile/doctor_profile_screen.dart';
 import 'features/home/ui/home_screen.dart';
 
 class AppNavbar extends StatefulWidget {
@@ -12,12 +15,15 @@ class AppNavbar extends StatefulWidget {
 }
 
 class _AppNavbarState extends State<AppNavbar> {
-  int tabIndex = 1;
+  int tabIndex = 0;
   @override
   Widget build(BuildContext context) {
     var screens = [
-      const HomeScreen(),
-      const DoctorDetailsScreen(),
+      BlocProvider(
+        create: (context) => getIt<HomeCubit>()..getSpecializations(),
+        child: const HomeScreen(),
+      ),
+      const DoctorProfileScreen(),
       const ProfileScreen(),
     ];
     var tabs = [

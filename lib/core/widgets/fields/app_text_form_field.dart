@@ -82,7 +82,7 @@ class AppTextFormField extends StatelessWidget {
         filled: true,
       ),
       obscureText: isObscureText ?? false,
-      style: AppTextStyles.font14DarkBlueW500,
+      style: AppTextStyles.font14DarkBlueMedium,
       validator: validator,
       onChanged: onChanged,
     );

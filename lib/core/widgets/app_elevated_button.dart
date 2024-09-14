@@ -28,7 +28,7 @@ class AppElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     //Todo:: remove this and use the one in [TextStyles]
 
-    var font16WhiteW700 = TextStyle(
+    var font16WhiteBold = TextStyle(
       fontSize: 16.sp,
       color: Colors.white,
       fontWeight: FontWeight.w700,
@@ -44,7 +44,7 @@ class AppElevatedButton extends StatelessWidget {
       ),
       child: Text(
         label,
-        style: textStyle ?? font16WhiteW700,
+        style: textStyle ?? font16WhiteBold,
       ),
     );
   }
