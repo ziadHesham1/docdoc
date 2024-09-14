@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../theming/app_colors.dart';
 
-/// add text color property and lightMode
-class AppElevatedButton extends StatelessWidget {
+/// Custom TextButton with similar properties as AppElevatedButton
+class AppTextButton extends StatelessWidget {
   final Function()? onPressed;
   final Color? backgroundColor;
   final TextStyle? textStyle;
@@ -14,7 +14,7 @@ class AppElevatedButton extends StatelessWidget {
   final double? borderRadius;
   final bool lightMode;
 
-  const AppElevatedButton({
+  const AppTextButton({
     super.key,
     required this.onPressed,
     required this.label,
@@ -40,15 +40,15 @@ class AppElevatedButton extends StatelessWidget {
       fontWeight: FontWeight.w700,
     );
 
-    return ElevatedButton(
+    return TextButton(
       onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
+      style: TextButton.styleFrom(
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 16.r),
         ),
         backgroundColor:
-            lightMode ? Colors.white : backgroundColor ?? AppColors.primary,
+            lightMode ? Colors.white : backgroundColor ?? Colors.transparent,
         minimumSize: getButtonSize(),
       ),
       child: Text(

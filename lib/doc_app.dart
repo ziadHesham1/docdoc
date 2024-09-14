@@ -25,6 +25,10 @@ class DocApp extends StatelessWidget {
             backgroundColor: Colors.white,
             surfaceTintColor: Colors.white,
           ),
+          colorScheme: ColorScheme.fromSwatch().copyWith(
+            secondary: AppColors.secondary,
+            primary: AppColors.primary,
+          ),
         ),
         debugShowCheckedModeBanner: false,
         onGenerateRoute: appRouter.generateRoute,

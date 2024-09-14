@@ -1,7 +1,7 @@
 import 'package:docdoc/core/theming/app_colors.dart';
 import 'package:docdoc/core/theming/app_text_styles.dart';
-import 'package:docdoc/features/appointment/models/appointment_info.dart';
-import 'package:docdoc/features/appointment/widgets/ischooler_timeline_tile.dart';
+import 'package:docdoc/features/appointment/data/models/appointment_info.dart';
+import 'package:docdoc/features/appointment/presentation/widgets/ischooler_timeline_tile.dart';
 import 'package:flutter/material.dart';
 
 class AppointmentItem extends StatelessWidget {

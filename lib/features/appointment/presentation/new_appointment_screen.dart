@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'models/appointment_info.dart';
+import '../../../core/features/steps_process/steps_screen.dart';
+import 'appointment_process_steps.dart';
+import '../data/models/appointment_info.dart';
 import 'widgets/available_appointments.dart';
 import 'widgets/booking_payment_widget.dart';
-import 'widgets/booking_progress_widget.dart';
 import 'widgets/booking_summery_widget.dart';
 
 class NewAppointmentScreen extends StatefulWidget {
@@ -22,6 +23,19 @@ class _NewAppointmentScreenState extends State<NewAppointmentScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text('New Appointment'),
+      ),
+      body: StepsScreen(
+        steps: [
+          AppointmentDateAndTimeProcess(),
+          AppointmentPendingProcess(),
+          AppointmentPaymentProcess(),
+          AppointmentSummaryProcess(),
+        ],
+      ),
+    );
+    return Scaffold(
+      appBar: AppBar(
         title: const Text('Book Appointment'),
       ),
       body: Padding(
@@ -30,17 +44,17 @@ class _NewAppointmentScreenState extends State<NewAppointmentScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 20.h),
-            SizedBox(
-              height: 100.h,
-              child: BookingProcessWidget(
-                processIndex: _processIndex,
-                onConnectorTap: (index) {
-                  setState(() {
-                    _processIndex = index;
-                  });
-                },
-              ),
-            ),
+            // SizedBox(
+            //   height: 100.h,
+            //   child: BookingProcessWidget(
+            //     processIndex: _processIndex,
+            //     onConnectorTap: (index) {
+            //       setState(() {
+            //         _processIndex = index;
+            //       });
+            //     },
+            //   ),
+            // ),
             if (_processIndex == 0)
               AvailableAppointments(
                 onAppointmentSelected: (selectedAppointment) {

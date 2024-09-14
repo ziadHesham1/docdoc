@@ -2,23 +2,30 @@ import 'package:chips_choice/chips_choice.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/theming/app_colors.dart';
-import '../../../core/theming/app_text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_text_styles.dart';
 
-class ChooseTimePeriod extends StatefulWidget {
-  // onTimePeriodSelected
-  final Function(String selectedTimePeriod) onTimePeriodSelected;
-  const ChooseTimePeriod({
+class ChoosePlace extends StatefulWidget {
+  // onPlaceSelected
+  final Function(String selectedPlace) onPlaceSelected;
+  const ChoosePlace({
     super.key,
-    required this.onTimePeriodSelected,
+    required this.onPlaceSelected,
   });
 
   @override
-  State<ChooseTimePeriod> createState() => _ChooseTimePeriodState();
+  State<ChoosePlace> createState() => _ChoosePlaceState();
 }
 
-class _ChooseTimePeriodState extends State<ChooseTimePeriod> {
-  String tag = 'Morning';
+class _ChoosePlaceState extends State<ChoosePlace> {
+  var placesList = ['Miami', 'Sidi Gaber', 'Victoria'];
+  late String selectedPlace;
+  @override
+  initState() {
+    super.initState();
+    selectedPlace = placesList[0];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -39,14 +46,13 @@ class _ChooseTimePeriodState extends State<ChooseTimePeriod> {
             ),
             child: ChipsChoice.single(
               padding: EdgeInsets.zero,
-              value: tag,
+              value: selectedPlace,
               onChanged: (val) {
-                setState(() => tag = val);
-                widget.onTimePeriodSelected(tag);
+                setState(() => selectedPlace = val);
+                widget.onPlaceSelected(selectedPlace);
               },
-              choiceItems: ['Morning', 'Afternoon', 'Evening']
-                  .map((e) => C2Choice(value: e, label: e))
-                  .toList(),
+              choiceItems:
+                  placesList.map((e) => C2Choice(value: e, label: e)).toList(),
               // choiceCheckmark: true,
               choiceStyle: C2ChipStyle.filled(
                 foregroundStyle: AppTextStyles.font14Primary,

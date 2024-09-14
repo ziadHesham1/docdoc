@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/helpers/app_assets.dart';
-import '../../../core/theming/app_text_styles.dart';
-import '../models/appointment_info.dart';
+import '../../../../core/helpers/app_assets.dart';
+import '../../../../core/theming/app_text_styles.dart';
+import '../../data/models/appointment_info.dart';
 
 class BookingPaymentWidget extends StatelessWidget {
   final AppointmentInfo selectedAppointment;

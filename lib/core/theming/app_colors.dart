@@ -1,7 +1,8 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
 
 class AppColors {
   static const Color primary = Color(0xff247CFF);
+  static const Color secondary = Colors.white;
   // Alice Blue
   static const Color aliceBlue = Color(0xfff4f8ff);
   static const Color yellow = Color(0xFFFFD600);

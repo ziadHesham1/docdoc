@@ -2,8 +2,8 @@ import 'package:chips_choice/chips_choice.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/theming/app_colors.dart';
-import '../../../core/theming/app_text_styles.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_text_styles.dart';
 
 class ChooseTime extends StatefulWidget {
   final Function(String selectedTime) onTimeSelected;
@@ -32,31 +32,33 @@ class _ChooseTimePeriodState extends State<ChooseTime> {
           style: AppTextStyles.font16DarkBlueSemiBold,
         ),
         SizedBox(height: 10.h),
-        ChipsChoice.single(
-          wrapped: true,
-          alignment: WrapAlignment.center,
-          padding: EdgeInsets.zero,
-          value: tag,
-          onChanged: (val) {
-            setState(() => tag = val);
-            widget.onTimeSelected(tag);
-          },
-          choiceItems: list.map((e) => C2Choice(value: e, label: e)).toList(),
-          choiceStyle: C2ChipStyle.filled(
-            foregroundStyle: AppTextStyles.font14Primary,
-            selectedStyle: C2ChipStyle(
-              foregroundStyle: AppTextStyles.font14White,
+        Center(
+          child: ChipsChoice.single(
+            wrapped: true,
+            alignment: WrapAlignment.center,
+            padding: EdgeInsets.zero,
+            value: tag,
+            onChanged: (val) {
+              setState(() => tag = val);
+              widget.onTimeSelected(tag);
+            },
+            choiceItems: list.map((e) => C2Choice(value: e, label: e)).toList(),
+            choiceStyle: C2ChipStyle.filled(
+              foregroundStyle: AppTextStyles.font14Primary,
+              selectedStyle: C2ChipStyle(
+                foregroundStyle: AppTextStyles.font14White,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10.r),
+                ),
+                height: 40.h,
+                backgroundColor: AppColors.primary,
+              ),
+              color: AppColors.grey30,
               borderRadius: BorderRadius.all(
                 Radius.circular(10.r),
               ),
-              height: 40.h,
-              backgroundColor: AppColors.primary,
+              height: 35.h,
             ),
-            color: AppColors.grey30,
-            borderRadius: BorderRadius.all(
-              Radius.circular(10.r),
-            ),
-            height: 35.h,
           ),
         ),
       ],
