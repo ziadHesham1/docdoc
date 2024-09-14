@@ -45,7 +45,7 @@ class SpecialtyItem extends StatelessWidget {
             specialization.name,
             // font 12
             style: isSelected
-                ? AppTextStyles.font13DarkBlueW500
+                ? AppTextStyles.font13DarkBlueMedium
                 : AppTextStyles.font12DarkBlue,
           )
         ],

@@ -25,7 +25,7 @@ class LoginTextButton extends StatelessWidget {
               ),
               TextSpan(
                 text: 'Login',
-                style: AppTextStyles.font12PrimaryW600,
+                style: AppTextStyles.font12PrimarySemiBold,
               ),
             ],
           ),

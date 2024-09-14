@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/helpers/shared_pref/shared_pref_helper.dart';
 import '../../../core/helpers/shared_pref/shared_pref_keys.dart';
-import '../../../core/networking/api_error_handler.dart';
 import '../../../core/networking/api_result.dart';
 import '../../../core/networking/dio_factory.dart';
 import '../data/models/login_request_body.dart';
@@ -17,7 +16,7 @@ class LoginCubit extends Cubit<LoginState> {
   final TextEditingController emailController =
       TextEditingController(text: 'ziad@mail.com');
   final TextEditingController passwordController =
-      TextEditingController(text: 'Ziad@111111');
+      TextEditingController(text: 'Ziad@1111');
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   Future<void> login() async {

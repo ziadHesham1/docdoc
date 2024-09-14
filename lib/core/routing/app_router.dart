@@ -1,7 +1,9 @@
-import 'package:docdoc/app_navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../app_navbar.dart';
+import '../../features/appointment/new_appointment_screen.dart';
+import '../../features/doctor_profile/widgets/doctor_reviews_widget.dart';
 import '../../features/home/logic/home_cubit.dart';
 import '../../features/home/ui/home_screen.dart';
 import '../../features/login/logic/login_cubit.dart';
@@ -13,7 +15,7 @@ import '../di/dependency_injection.dart';
 import 'routes.dart';
 
 class AppRouter {
-  Route generateRoute(RouteSettings settings) {
+  Route? generateRoute(RouteSettings settings) {
     // this argument to be used in any screen like this (argument as ClassName)
     var argument = settings.arguments;
     switch (settings.name) {
@@ -37,9 +39,20 @@ class AppRouter {
         );
       case Routes.homeScreen:
         return home();
+      case Routes.newAppointmentScreen:
+        return MaterialPageRoute(
+          builder: (_) => const NewAppointmentScreen(),
+        );
+      case Routes.reviewsScreen:
+        return MaterialPageRoute(
+          builder: (_) => const ReviewsScreen(),
+        );
+      case Routes.navbar:
+        return navbar();
       default:
-        return home();
+        null;
     }
+    return null;
   }
 
   MaterialPageRoute<dynamic> home() {
@@ -48,6 +61,12 @@ class AppRouter {
         create: (context) => getIt<HomeCubit>()..getSpecializations(),
         child: const HomeScreen(),
       ),
+    );
+  }
+
+  MaterialPageRoute<dynamic> navbar() {
+    return MaterialPageRoute(
+      builder: (_) => const AppNavbar(),
     );
   }
 }

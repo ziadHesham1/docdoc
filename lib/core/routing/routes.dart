@@ -4,4 +4,8 @@ class Routes {
 
   static const String homeScreen = '/homeScreen';
   static const String signupScreen = '/signupScreen';
+  static const String navbar = '/navbar';
+  static const String newAppointmentScreen = 'newAppointmentScreen';
+  // ReviewsScreen
+  static const String reviewsScreen = '/reviewsScreen';
 }

@@ -25,7 +25,7 @@ class SignupTextButton extends StatelessWidget {
               ),
               TextSpan(
                 text: 'Sign Up',
-                style: AppTextStyles.font12PrimaryW600,
+                style: AppTextStyles.font12PrimarySemiBold,
               ),
             ],
           ),
