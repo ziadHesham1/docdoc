@@ -2,7 +2,7 @@ import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_colors.dart';
 
 class ChooseDate extends StatefulWidget {
   final Function(DateTime selectedDate) onDateSelected;
@@ -18,9 +18,9 @@ class _ChooseDateState extends State<ChooseDate> {
   @override
   Widget build(BuildContext context) {
     return EasyDateTimeLine(
-      headerProps: const EasyHeaderProps(
-        padding: EdgeInsets.zero,
-        dateFormatter: DateFormatter.fullDateMonthAsStrDY(),
+      headerProps: EasyHeaderProps(
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
+        dateFormatter: const DateFormatter.fullDateMonthAsStrDY(),
       ),
       initialDate: DateTime.now(),
       onDateChange: (selectedDate) {

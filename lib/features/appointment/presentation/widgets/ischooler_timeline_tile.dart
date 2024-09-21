@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
-import '../../../core/theming/app_colors.dart';
+import '../../../../core/theming/app_colors.dart';
 
 class AppTimelineTile extends StatelessWidget {
   final bool hasIndicator;
