@@ -20,10 +20,10 @@ class DocApp extends StatelessWidget {
         title: 'DocDoc',
         theme: ThemeData(
           primaryColor: AppColors.primary,
-          scaffoldBackgroundColor: Colors.white,
+          scaffoldBackgroundColor: const Color(0xffff6f6f6),
           appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.white,
-            surfaceTintColor: Colors.white,
+            backgroundColor: Color(0xffff6f6f6),
+            surfaceTintColor: Color(0xffff6f6f6),
           ),
           colorScheme: ColorScheme.fromSwatch().copyWith(
             secondary: AppColors.secondary,

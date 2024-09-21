@@ -1,3 +1,5 @@
+import 'package:docdoc/features/patient_profile/presentation/patient_profile_screen.dart';
+
 import 'core/di/dependency_injection.dart';
 import 'core/theming/app_colors.dart';
 import 'features/home/logic/home_cubit.dart';
@@ -15,7 +17,7 @@ class AppNavbar extends StatefulWidget {
 }
 
 class _AppNavbarState extends State<AppNavbar> {
-  int tabIndex = 0;
+  int tabIndex = 2;
   @override
   Widget build(BuildContext context) {
     var screens = [
@@ -24,7 +26,7 @@ class _AppNavbarState extends State<AppNavbar> {
         child: const HomeScreen(),
       ),
       const DoctorProfileScreen(),
-      const ProfileScreen(),
+      const PatientProfileScreen(),
     ];
     var tabs = [
       const BottomNavigationBarItem(
@@ -44,7 +46,7 @@ class _AppNavbarState extends State<AppNavbar> {
         body: screens[tabIndex],
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: tabIndex,
-          backgroundColor: Colors.white,
+          backgroundColor: const Color(0xffff6f6f6),
           selectedItemColor: AppColors.primary,
           onTap: (value) {
             setState(() {
@@ -53,22 +55,5 @@ class _AppNavbarState extends State<AppNavbar> {
           },
           items: tabs,
         ));
-  }
-}
-
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Profile'),
-        surfaceTintColor: Colors.white,
-      ),
-      body: const Center(
-        child: Text('Profile Screen'),
-      ),
-    );
   }
 }

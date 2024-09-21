@@ -57,7 +57,6 @@ class _StepsScreenState extends State<StepsScreen> {
                 child: AppTextButton(
                   onPressed: _onBackButtonPressed,
                   label: currentStep.backText() ?? 'back',
-                  lightMode: true,
                 ),
               ),
             SizedBox(width: 10.w),

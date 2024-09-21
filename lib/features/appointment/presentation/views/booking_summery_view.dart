@@ -1,10 +1,10 @@
-import 'package:docdoc/core/helpers/app_assets.dart';
-import 'package:docdoc/core/theming/app_colors.dart';
-import 'package:docdoc/core/theming/app_text_styles.dart';
-import 'package:docdoc/features/appointment/presentation/widgets/appointment_info_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../../../../core/helpers/app_assets.dart';
+import '../../../../core/theming/app_text_styles.dart';
+import '../widgets/appointment_info_widget.dart';
 
 class BookingSummeryView extends StatelessWidget {
   const BookingSummeryView({

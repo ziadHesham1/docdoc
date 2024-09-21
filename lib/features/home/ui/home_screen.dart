@@ -1,4 +1,3 @@
-import 'package:docdoc/features/home/ui/new/home_appointment_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

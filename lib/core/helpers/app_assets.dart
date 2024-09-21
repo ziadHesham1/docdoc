@@ -27,8 +27,8 @@ class AppAssets {
       'assets/images/home_card_background.png';
 
   static const String waiting_image = 'assets/images/waiting_image.png';
-// assets/images/instapay_qr.png
   static const String instapay_qr = 'assets/images/instapay_qr.png';
+  static const String profile_image = 'assets/images/profile_image.png';
 
   /// icons ------------------------
   static const String calender_icon = 'assets/icons/calender_icon.png';

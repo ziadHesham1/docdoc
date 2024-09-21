@@ -12,7 +12,7 @@ class AppTextButton extends StatelessWidget {
   final double? width;
   final double? height;
   final double? borderRadius;
-  final bool lightMode;
+  final Widget? leadingIcon;
 
   const AppTextButton({
     super.key,
@@ -23,20 +23,14 @@ class AppTextButton extends StatelessWidget {
     this.backgroundColor,
     this.textStyle,
     this.borderRadius,
-    this.lightMode = false,
+    this.leadingIcon,
   });
 
   @override
   Widget build(BuildContext context) {
-    var font16WhiteBold = TextStyle(
-      fontSize: 16.sp,
-      color: Colors.white,
-      fontWeight: FontWeight.w700,
-    );
-
     var font16PrimaryBold = TextStyle(
       fontSize: 16.sp,
-      color: AppColors.primary,
+      color: backgroundColor ?? AppColors.primary,
       fontWeight: FontWeight.w700,
     );
 
@@ -47,13 +41,22 @@ class AppTextButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 16.r),
         ),
-        backgroundColor:
-            lightMode ? Colors.white : backgroundColor ?? Colors.transparent,
+        foregroundColor: backgroundColor,
         minimumSize: getButtonSize(),
       ),
-      child: Text(
-        label,
-        style: textStyle ?? (lightMode ? font16PrimaryBold : font16WhiteBold),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (leadingIcon != null) ...{
+            leadingIcon!,
+            SizedBox(width: 10.w),
+          },
+          Text(
+            label,
+            style: textStyle ?? (font16PrimaryBold),
+          ),
+        ],
       ),
     );
   }
