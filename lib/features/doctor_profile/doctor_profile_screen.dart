@@ -35,7 +35,7 @@ class DoctorProfileScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
         child: AppElevatedButton(
           onPressed: () {
-            context.pushNamed(Routes.newAppointmentScreen);
+            context.pushNamed(Routes.BookingScreen);
           },
           label: 'Make An Appointment',
         ),

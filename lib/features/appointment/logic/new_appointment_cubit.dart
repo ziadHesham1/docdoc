@@ -3,22 +3,22 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../data/models/appointment_info.dart';
 import 'new_appointment_state.dart';
 
-class NewAppointmentCubit extends Cubit<NewAppointmentState> {
-  NewAppointmentCubit() : super(const NewAppointmentState.initial());
+class BookingCubit extends Cubit<BookingState> {
+  BookingCubit() : super(const BookingState.initial());
 
   onAppointmentSelected({required AppointmentInfo appointmentInfo}) {
     emit(
-      NewAppointmentState.appointmentSelected(
+      BookingState.appointmentSelected(
         appointmentInfo: appointmentInfo,
       ),
     );
   }
 
-  onAppointmentRequested() {
+  onBookingRequested() {
     if (state is AppointmentSelected) {
       var currentState = (state as AppointmentSelected);
       emit(
-        NewAppointmentState.paymentRequested(
+        BookingState.paymentRequested(
           appointmentInfo: currentState.appointmentInfo,
         ),
       );
@@ -29,7 +29,7 @@ class NewAppointmentCubit extends Cubit<NewAppointmentState> {
     if (state is PaymentRequested) {
       var currentState = (state as PaymentRequested);
       emit(
-        NewAppointmentState.paymentRequestAccepted(
+        BookingState.paymentRequestAccepted(
           appointmentInfo: currentState.appointmentInfo,
         ),
       );
@@ -40,7 +40,7 @@ class NewAppointmentCubit extends Cubit<NewAppointmentState> {
     if (state is PaymentRequested) {
       var currentState = (state as PaymentRequested);
       emit(
-        NewAppointmentState.paymentRequestRejected(
+        BookingState.paymentRequestRejected(
           appointmentInfo: currentState.appointmentInfo,
         ),
       );
@@ -49,19 +49,19 @@ class NewAppointmentCubit extends Cubit<NewAppointmentState> {
 
   onPaymentSent() {
     if (state is PaymentRequestAccepted) {
-      emit(const NewAppointmentState.paymentSent());
+      emit(const BookingState.paymentSent());
     }
   }
 
   onPaymentConfirmed() {
     if (state is PaymentSent) {
-      emit(const NewAppointmentState.paymentConfirmed());
+      emit(const BookingState.paymentConfirmed());
     }
   }
 
   onPaymentRejected() {
     if (state is PaymentSent) {
-      emit(const NewAppointmentState.paymentRejected());
+      emit(const BookingState.paymentRejected());
     }
   }
 }

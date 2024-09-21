@@ -26,14 +26,21 @@ class AppAssets {
   static const String home_card_background =
       'assets/images/home_card_background.png';
 
-  /// icons
+  static const String waiting_image = 'assets/images/waiting_image.png';
+// assets/images/instapay_qr.png
+  static const String instapay_qr = 'assets/images/instapay_qr.png';
+
+  /// icons ------------------------
   static const String calender_icon = 'assets/icons/calender_icon.png';
   static const String appointment_icon = 'assets/icons/appointment_icon.png';
+  static const String v_cash_icon = 'assets/icons/v_cash_icon.png';
+  static const String instapay_icon = 'assets/icons/instapay_icon.png';
 
-  /// svgs
+  /// svgs ------------------------
   static const String docdoc_logo_svg = 'assets/svgs/docdoc_logo.svg';
   static const String docdoc_logo_low_opacity =
       'assets/svgs/docdoc_logo_low_opacity.svg';
   static const String docdoc_icon_and_name_svg =
       'assets/svgs/docdoc_icon_and_name.svg';
+  static const finished_icon = 'assets/svgs/finish-8.svg';
 }

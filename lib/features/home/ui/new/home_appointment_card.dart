@@ -1,8 +1,10 @@
-import 'package:docdoc/core/helpers/app_assets.dart';
-import 'package:docdoc/core/theming/app_colors.dart';
-import 'package:docdoc/core/widgets/app_image_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../../../../core/helpers/app_assets.dart';
+import '../../../../core/theming/app_colors.dart';
+import '../../../../core/widgets/app_icon_with_text_widget.dart';
 
 class HomeAppointmentCard extends StatelessWidget {
   const HomeAppointmentCard({super.key});
@@ -18,18 +20,18 @@ class HomeAppointmentCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Appointment',
+                'Next Appointment',
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Icon(Icons.arrow_forward_ios, color: Colors.white),
+              const Icon(Icons.arrow_forward_ios, color: Colors.white),
             ],
           ),
           SizedBox(height: 14.h),
@@ -40,23 +42,29 @@ class HomeAppointmentCard extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _iconWithText(
-                      Icons.calendar_month, 'Sunday, 11 September 2024'),
+                  const AppIconWithTextWidget(
+                    icon: Icons.calendar_month,
+                    text: 'Sunday, 11 September 2024',
+                  ),
                   SizedBox(height: 10.h),
-                  _iconWithText(Icons.timer, '08:00 - 09:00 AM'),
+                  const AppIconWithTextWidget(
+                    icon: Icons.timer,
+                    text: '08:00 - 09:00 AM',
+                  ),
                 ],
               ),
-              Container(
-                decoration: const BoxDecoration(
-                  color: Colors.black87,
-                  shape: BoxShape.circle,
-                ),
-                padding: EdgeInsets.all(12.r),
-                child: const Icon(
-                  Icons.call,
-                  color: Colors.white,
-                ),
-              ),
+              // Container(
+              //   decoration: const BoxDecoration(
+              //     color: Colors.black87,
+              //     shape: BoxShape.circle,
+              //   ),
+              //   padding: EdgeInsets.all(8.r),
+              //   child: const Icon(
+              //     Icons.call,
+              //     size: 20,
+              //     color: Colors.white,
+              //   ),
+              // ),
             ],
           ),
           SizedBox(height: 14.h),
@@ -71,26 +79,28 @@ class HomeAppointmentCard extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                AppImageWidget(
-                  imageUrl: AppAssets.doctor_image,
-                  borderRadius: 120.r,
-                  height: 50.h,
+                SvgPicture.asset(
+                  AppAssets.finished_icon,
+                  color: const Color.fromARGB(255, 79, 201, 83),
+                  // borderRadius: 120.r,
+                  height: 30.h,
                   width: 50.w,
                 ),
                 SizedBox(width: 10.w),
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Dr. John Doe',
+                      'Booking Status',
                       style: TextStyle(
                         fontSize: 16.sp,
                         // color: AppColors.primary,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 8.h),
+                    SizedBox(height: 4.h),
                     Text(
-                      'Dermatologist',
+                      'Completed',
                       style: TextStyle(
                         fontSize: 14.sp,
                         color: AppColors.grey,
@@ -99,26 +109,12 @@ class HomeAppointmentCard extends StatelessWidget {
                   ],
                 ),
                 const Spacer(),
-                const Icon(Icons.message_outlined),
+                // const Icon(Icons.message_outlined),
               ],
             ),
           )
         ],
       ),
-    );
-  }
-
-  Row _iconWithText(IconData icon, String text) {
-    return Row(
-      children: [
-        Icon(icon, color: Colors.white),
-        SizedBox(width: 10.w),
-        Text(text,
-            style: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w500,
-            ))
-      ],
     );
   }
 }

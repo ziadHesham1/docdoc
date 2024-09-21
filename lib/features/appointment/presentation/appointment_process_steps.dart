@@ -1,14 +1,17 @@
-import 'package:docdoc/features/appointment/data/models/appointment_info.dart';
-import 'package:docdoc/features/appointment/logic/new_appointment_cubit.dart';
-import 'package:docdoc/features/appointment/logic/new_appointment_state.dart';
+import 'package:docdoc/features/appointment/presentation/views/booking_summery_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'widgets/available_appointments.dart';
 import '../../../core/features/steps_process/layout_steps_model.dart';
 import '../../../core/features/steps_process/step_process_interface.dart';
+import '../data/models/appointment_info.dart';
+import '../logic/new_appointment_cubit.dart';
+import '../logic/new_appointment_state.dart';
+import 'views/booking_bending_view.dart';
+import 'views/booking_payment_view.dart';
+import 'widgets/available_appointments.dart';
 
-class AppointmentDateAndTimeProcess extends StepProcess {
+class BookingDateAndTimeProcess extends StepProcess {
   @override
   LayoutStepsModel content(BuildContext context) {
     return LayoutStepsModel(
@@ -24,9 +27,10 @@ class AppointmentDateAndTimeProcess extends StepProcess {
 
   @override
   bool onNext(BuildContext context) {
-    var state = context.read<NewAppointmentCubit>().state;
+    // return true;
+    var state = context.read<BookingCubit>().state;
     if (state is AppointmentSelected && state.appointmentInfo!.isValid()) {
-      context.read<NewAppointmentCubit>().onAppointmentRequested();
+      context.read<BookingCubit>().onBookingRequested();
       return true;
     }
 
@@ -34,27 +38,12 @@ class AppointmentDateAndTimeProcess extends StepProcess {
   }
 }
 
-class AppointmentPendingProcess extends StepProcess {
+class BookingPendingProcess extends StepProcess {
   @override
   LayoutStepsModel content(BuildContext context) {
-    return LayoutStepsModel(
+    return const LayoutStepsModel(
       title: 'Pending',
-      content: BlocBuilder<NewAppointmentCubit, NewAppointmentState>(
-        builder: (context, state) {
-          return state.maybeWhen(
-            orElse: () => const SizedBox(),
-            paymentRequested: (AppointmentInfo? appointmentInfo) => Column(
-              children: [
-                const Text('Appointment: '),
-                Text('Place: ${appointmentInfo?.place}'),
-                Text('startTime: ${appointmentInfo?.startTime}'),
-                Text('endTime: ${appointmentInfo?.endTime}'),
-                Text('date: ${appointmentInfo?.date}'),
-              ],
-            ),
-          );
-        },
-      ),
+      content: BookingBendingView(),
     );
   }
 
@@ -65,14 +54,17 @@ class AppointmentPendingProcess extends StepProcess {
   bool onNext(BuildContext context) => true;
 }
 
-class AppointmentPaymentProcess extends StepProcess {
+class BookingPaymentProcess extends StepProcess {
   @override
   LayoutStepsModel content(BuildContext context) {
     return const LayoutStepsModel(
       title: 'Payment',
-      content: Text('Payment'),
+      content: BookingPaymentView(),
     );
   }
+
+  @override
+  String? nextText() => 'Payment Sent ';
 
   @override
   bool onBack(BuildContext context) => true;
@@ -81,17 +73,17 @@ class AppointmentPaymentProcess extends StepProcess {
   bool onNext(BuildContext context) => true;
 }
 
-class AppointmentSummaryProcess extends StepProcess {
+class BookingSummaryProcess extends StepProcess {
   @override
   LayoutStepsModel content(BuildContext context) {
     return const LayoutStepsModel(
       title: 'Summary',
-      content: Text('Summary'),
+      content: BookingSummeryView(),
     );
   }
 
   @override
-  bool onBack(BuildContext context) => true;
+  bool onBack(BuildContext context) => false;
 
   @override
   bool onNext(BuildContext context) => true;

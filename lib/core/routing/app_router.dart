@@ -1,8 +1,8 @@
-import 'package:docdoc/features/appointment/logic/new_appointment_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../app_navbar.dart';
+import '../../features/appointment/logic/new_appointment_cubit.dart';
 import '../../features/appointment/presentation/new_appointment_screen.dart';
 import '../../features/doctor_profile/widgets/doctor_reviews_widget.dart';
 import '../../features/home/logic/home_cubit.dart';
@@ -40,11 +40,11 @@ class AppRouter {
         );
       case Routes.homeScreen:
         return home();
-      case Routes.newAppointmentScreen:
+      case Routes.BookingScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (context) => NewAppointmentCubit(),
-            child: const NewAppointmentScreen(),
+            create: (context) => BookingCubit(),
+            child: const BookingScreen(),
           ),
         );
       case Routes.reviewsScreen:

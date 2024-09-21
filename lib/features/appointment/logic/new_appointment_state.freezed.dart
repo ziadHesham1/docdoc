@@ -107,12 +107,12 @@ mixin _$NewAppointmentState {
 /// @nodoc
 abstract class $NewAppointmentStateCopyWith<$Res> {
   factory $NewAppointmentStateCopyWith(
-          NewAppointmentState value, $Res Function(NewAppointmentState) then) =
-      _$NewAppointmentStateCopyWithImpl<$Res, NewAppointmentState>;
+          BookingState value, $Res Function(BookingState) then) =
+      _$NewAppointmentStateCopyWithImpl<$Res, BookingState>;
 }
 
 /// @nodoc
-class _$NewAppointmentStateCopyWithImpl<$Res, $Val extends NewAppointmentState>
+class _$NewAppointmentStateCopyWithImpl<$Res, $Val extends BookingState>
     implements $NewAppointmentStateCopyWith<$Res> {
   _$NewAppointmentStateCopyWithImpl(this._value, this._then);
 
@@ -268,7 +268,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements NewAppointmentState {
+abstract class _Initial implements BookingState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -418,7 +418,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements NewAppointmentState {
+abstract class _Loading implements BookingState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -596,7 +596,7 @@ class _$AppointmentSelectedImpl implements AppointmentSelected {
   }
 }
 
-abstract class AppointmentSelected implements NewAppointmentState {
+abstract class AppointmentSelected implements BookingState {
   const factory AppointmentSelected({final AppointmentInfo? appointmentInfo}) =
       _$AppointmentSelectedImpl;
 
@@ -780,7 +780,7 @@ class _$PaymentRequestedImpl implements PaymentRequested {
   }
 }
 
-abstract class PaymentRequested implements NewAppointmentState {
+abstract class PaymentRequested implements BookingState {
   const factory PaymentRequested({final AppointmentInfo? appointmentInfo}) =
       _$PaymentRequestedImpl;
 
@@ -967,7 +967,7 @@ class _$PaymentRequestAcceptedImpl implements PaymentRequestAccepted {
   }
 }
 
-abstract class PaymentRequestAccepted implements NewAppointmentState {
+abstract class PaymentRequestAccepted implements BookingState {
   const factory PaymentRequestAccepted(
       {final AppointmentInfo? appointmentInfo}) = _$PaymentRequestAcceptedImpl;
 
@@ -1154,7 +1154,7 @@ class _$PaymentRequestRejectedImpl implements PaymentRequestRejected {
   }
 }
 
-abstract class PaymentRequestRejected implements NewAppointmentState {
+abstract class PaymentRequestRejected implements BookingState {
   const factory PaymentRequestRejected(
       {final AppointmentInfo? appointmentInfo}) = _$PaymentRequestRejectedImpl;
 
@@ -1310,7 +1310,7 @@ class _$PaymentSentImpl implements PaymentSent {
   }
 }
 
-abstract class PaymentSent implements NewAppointmentState {
+abstract class PaymentSent implements BookingState {
   const factory PaymentSent() = _$PaymentSentImpl;
 }
 
@@ -1460,7 +1460,7 @@ class _$PaymentConfirmedImpl implements PaymentConfirmed {
   }
 }
 
-abstract class PaymentConfirmed implements NewAppointmentState {
+abstract class PaymentConfirmed implements BookingState {
   const factory PaymentConfirmed() = _$PaymentConfirmedImpl;
 }
 
@@ -1610,6 +1610,6 @@ class _$PaymentRejectedImpl implements PaymentRejected {
   }
 }
 
-abstract class PaymentRejected implements NewAppointmentState {
+abstract class PaymentRejected implements BookingState {
   const factory PaymentRejected() = _$PaymentRejectedImpl;
 }

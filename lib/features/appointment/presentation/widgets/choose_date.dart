@@ -6,14 +6,24 @@ import '../../../../core/theming/app_colors.dart';
 
 class ChooseDate extends StatefulWidget {
   final Function(DateTime selectedDate) onDateSelected;
-  const ChooseDate({super.key, required this.onDateSelected});
+
+  const ChooseDate({
+    super.key,
+    required this.onDateSelected,
+  });
 
   @override
   State<ChooseDate> createState() => _ChooseDateState();
 }
 
 class _ChooseDateState extends State<ChooseDate> {
-  DateTime _selectedValue = DateTime.now();
+  late DateTime _selectedValue;
+  @override
+  void initState() {
+    super.initState();
+    _selectedValue = DateTime.now();
+    widget.onDateSelected(_selectedValue);
+  }
 
   @override
   Widget build(BuildContext context) {

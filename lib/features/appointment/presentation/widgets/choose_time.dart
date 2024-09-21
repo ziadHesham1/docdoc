@@ -7,7 +7,10 @@ import '../../../../core/theming/app_text_styles.dart';
 
 class ChooseTime extends StatefulWidget {
   final Function(String selectedTime) onTimeSelected;
-  const ChooseTime({super.key, required this.onTimeSelected});
+  const ChooseTime({
+    super.key,
+    required this.onTimeSelected,
+  });
 
   @override
   State<ChooseTime> createState() => _ChooseTimePeriodState();
@@ -15,11 +18,12 @@ class ChooseTime extends StatefulWidget {
 
 class _ChooseTimePeriodState extends State<ChooseTime> {
   var list = ['09-10 AM', '10-11 AM', '11-12 PM', '04-05 AM'];
-  String tag = '';
+  late String tag;
   @override
   void initState() {
     super.initState();
     tag = list[0];
+    widget.onTimeSelected(tag);
   }
 
   @override

@@ -36,7 +36,14 @@ class _StepsScreenState extends State<StepsScreen> {
                     widget.steps.map((e) => e.content(context).title).toList(),
               ),
             ),
-            currentStep.content(context).content,
+            Expanded(
+                child: SingleChildScrollView(
+                    child: Column(
+              children: [
+                SizedBox(height: 20.h),
+                currentStep.content(context).content,
+              ],
+            ))),
           ],
         ),
       ),

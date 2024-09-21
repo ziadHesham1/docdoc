@@ -1,8 +1,10 @@
+import 'package:docdoc/features/home/ui/new/home_appointment_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'new/home_appointment_card.dart';
 import 'widgets/home_app_bar.dart';
+import 'widgets/records_list_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -17,13 +19,17 @@ class HomeScreen extends StatelessWidget {
             children: [
               const HomeAppBar(),
               SizedBox(height: 15.h),
-              const HomeAppointmentCard(),
-              SizedBox(height: 15.h),
-              // const FindNearByDoctorCard(),
-              // SizedBox(height: 20.h),
-              // const SpecializationsBlocBuilder(),
-              // SizedBox(height: 20.h),
-              // const DoctorsBlocBuilder(),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      const HomeAppointmentCard(),
+                      SizedBox(height: 15.h),
+                      const RecordsListWidget(),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),

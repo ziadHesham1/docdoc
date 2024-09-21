@@ -24,6 +24,7 @@ class _ChoosePlaceState extends State<ChoosePlace> {
   initState() {
     super.initState();
     selectedPlace = placesList[0];
+    widget.onPlaceSelected(selectedPlace);
   }
 
   @override
@@ -32,7 +33,7 @@ class _ChoosePlaceState extends State<ChoosePlace> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Choose Time Period',
+          'Choose Place',
           style: AppTextStyles.font16DarkBlueSemiBold,
         ),
         SizedBox(height: 10.h),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 extension Navigation on BuildContext {
   /// push named
@@ -40,4 +41,21 @@ extension ListExtension<T> on List<T>? {
 extension MapExtension<K, V> on Map<K, V>? {
   bool get isNullOrEmpty => this == null || this!.isEmpty;
   bool get isNotNullOrEmpty => this != null && this!.isNotEmpty;
+}
+
+extension DateTimeExtension on DateTime? {
+  // Wednesday, 08 May 2023
+  String? get dMMMyyyyFormatOrNull {
+    if (this == null) {
+      return null;
+    }
+    return DateFormat('EEEE, dd MMM yyyy').format(this!);
+  }
+
+  String? get yMMMdFormatOrNull {
+    if (this == null) {
+      return null;
+    }
+    return DateFormat.yMMMd().format(this!);
+  }
 }
