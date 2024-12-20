@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../core/helpers/app_extensions.dart';
 import '../../core/routing/routes.dart';
 import '../../core/theming/app_text_styles.dart';
-import '../../core/widgets/app_elevated_button.dart';
+import '../../core/widgets/buttons/app_elevated_button.dart';
 import 'widgets/doc_logo_and_name.dart';
 import 'widgets/doctor_image_and_text.dart';
 

@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/helpers/app_regex.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/app_text_styles.dart';
-import '../../../../core/widgets/app_elevated_button.dart';
+import '../../../../core/widgets/buttons/app_elevated_button.dart';
 import '../../../../core/widgets/fields/app_text_form_field.dart';
 import '../../logic/login_cubit.dart';
 import 'password_text_form_field.dart';

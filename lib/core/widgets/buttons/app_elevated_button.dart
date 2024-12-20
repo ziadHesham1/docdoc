@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../theming/app_colors.dart';
+import '../../theming/app_colors.dart';
 
-/// Custom TextButton with similar properties as AppElevatedButton
-class AppTextButton extends StatelessWidget {
+/// add text color property and lightMode
+class AppElevatedButton extends StatelessWidget {
   final Function()? onPressed;
   final Color? backgroundColor;
   final TextStyle? textStyle;
@@ -12,9 +12,9 @@ class AppTextButton extends StatelessWidget {
   final double? width;
   final double? height;
   final double? borderRadius;
-  final Widget? leadingIcon;
+  final bool lightMode;
 
-  const AppTextButton({
+  const AppElevatedButton({
     super.key,
     required this.onPressed,
     required this.label,
@@ -23,40 +23,37 @@ class AppTextButton extends StatelessWidget {
     this.backgroundColor,
     this.textStyle,
     this.borderRadius,
-    this.leadingIcon,
+    this.lightMode = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    var font16PrimaryBold = TextStyle(
+    var font16WhiteBold = TextStyle(
       fontSize: 16.sp,
-      color: backgroundColor ?? AppColors.primary,
+      color: Colors.white,
       fontWeight: FontWeight.w700,
     );
 
-    return TextButton(
+    var font16PrimaryBold = TextStyle(
+      fontSize: 16.sp,
+      color: AppColors.primary,
+      fontWeight: FontWeight.w700,
+    );
+
+    return ElevatedButton(
       onPressed: onPressed,
-      style: TextButton.styleFrom(
+      style: ElevatedButton.styleFrom(
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 16.r),
         ),
-        foregroundColor: backgroundColor,
+        backgroundColor:
+            lightMode ? Colors.white : backgroundColor ?? AppColors.primary,
         minimumSize: getButtonSize(),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (leadingIcon != null) ...{
-            leadingIcon!,
-            SizedBox(width: 10.w),
-          },
-          Text(
-            label,
-            style: textStyle ?? (font16PrimaryBold),
-          ),
-        ],
+      child: Text(
+        label,
+        style: textStyle ?? (lightMode ? font16PrimaryBold : font16WhiteBold),
       ),
     );
   }

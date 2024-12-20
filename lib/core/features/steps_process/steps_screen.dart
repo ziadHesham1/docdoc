@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../widgets/app_elevated_button.dart';
+import '../../widgets/buttons/app_elevated_button.dart';
 import 'app_process_stepper.dart';
-import '../../widgets/app_text_button.dart';
+import '../../widgets/buttons/app_text_button.dart';
 import 'step_process_interface.dart';
 
 class StepsScreen extends StatefulWidget {

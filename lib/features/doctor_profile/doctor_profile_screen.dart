@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/helpers/app_extensions.dart';
 import '../../core/routing/routes.dart';
-import '../../core/widgets/app_elevated_button.dart';
+import '../../core/widgets/buttons/app_elevated_button.dart';
 import 'widgets/about_doctor_widget.dart';
 import 'widgets/doctor_personal_data.dart';
 import 'widgets/doctor_reviews_widget.dart';
